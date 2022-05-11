@@ -1,0 +1,12 @@
+C:\Users\Matheus\Desktop\Robot\Robot.Backend\Robot.Core\bin\Debug\net5.0\Robot.Core.deps.json
+C:\Users\Matheus\Desktop\Robot\Robot.Backend\Robot.Core\bin\Debug\net5.0\Robot.Core.dll
+C:\Users\Matheus\Desktop\Robot\Robot.Backend\Robot.Core\bin\Debug\net5.0\ref\Robot.Core.dll
+C:\Users\Matheus\Desktop\Robot\Robot.Backend\Robot.Core\bin\Debug\net5.0\Robot.Core.pdb
+C:\Users\Matheus\Desktop\Robot\Robot.Backend\Robot.Core\obj\Debug\net5.0\Robot.Core.csproj.AssemblyReference.cache
+C:\Users\Matheus\Desktop\Robot\Robot.Backend\Robot.Core\obj\Debug\net5.0\Robot.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Matheus\Desktop\Robot\Robot.Backend\Robot.Core\obj\Debug\net5.0\Robot.Core.AssemblyInfoInputs.cache
+C:\Users\Matheus\Desktop\Robot\Robot.Backend\Robot.Core\obj\Debug\net5.0\Robot.Core.AssemblyInfo.cs
+C:\Users\Matheus\Desktop\Robot\Robot.Backend\Robot.Core\obj\Debug\net5.0\Robot.Core.csproj.CoreCompileInputs.cache
+C:\Users\Matheus\Desktop\Robot\Robot.Backend\Robot.Core\obj\Debug\net5.0\Robot.Core.dll
+C:\Users\Matheus\Desktop\Robot\Robot.Backend\Robot.Core\obj\Debug\net5.0\ref\Robot.Core.dll
+C:\Users\Matheus\Desktop\Robot\Robot.Backend\Robot.Core\obj\Debug\net5.0\Robot.Core.pdb
