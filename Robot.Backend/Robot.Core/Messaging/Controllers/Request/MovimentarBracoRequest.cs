@@ -1,10 +1,10 @@
 ﻿using Robot.Core.Enums;
 
-namespace Robot.Core.Messaging.Request
+namespace Robot.Core.Messaging.Controllers.Request
 {
     public class MovimentarBracoRequest
     {
-        public MembroCorpo MembroCorpo { get; set; }
+        public MembroBraco MembroCorpo { get; set; }
         public int EstadoAtual { get; set; }
         public int ProximoEstado { get; set; }
     }
