@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Robot.Core.FluentValidation;
+using Robot.Core.Services;
 
 namespace Robot.Api
 {
@@ -23,6 +24,8 @@ namespace Robot.Api
             services.AddControllers();
 
             services.AddFluentValidationConfig();
+
+            services.AddSingleton<RobotService>();
 
             services.AddSwaggerGen(c =>
             {

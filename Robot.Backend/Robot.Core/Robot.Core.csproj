@@ -5,8 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Messaging\Response\" />
-    <Folder Include="Services\" />
+    <Compile Remove="Messaging\Response\**" />
+    <EmbeddedResource Remove="Messaging\Response\**" />
+    <None Remove="Messaging\Response\**" />
   </ItemGroup>
 
   <ItemGroup>
