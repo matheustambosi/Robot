@@ -23,6 +23,8 @@ namespace Robot.Api
         {
             services.AddControllers();
 
+            services.AddCors();
+
             services.AddFluentValidationConfig();
 
             services.AddSingleton<RobotService>();
@@ -46,6 +48,12 @@ namespace Robot.Api
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors(x => x
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .SetIsOriginAllowed(origin => true)
+                .AllowCredentials());
 
             app.UseAuthorization();
 

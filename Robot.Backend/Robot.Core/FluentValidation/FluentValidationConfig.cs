@@ -12,6 +12,7 @@ namespace Robot.Core.FluentValidation
             services.AddMvc()
                 .AddFluentValidation(fv =>
                 {
+                    fv.RegisterValidatorsFromAssemblyContaining<MovimentarBracoValidation>();
                     fv.RegisterValidatorsFromAssemblyContaining<MovimentarCabecaValidation>();
                     fv.ValidatorOptions.LanguageManager.Culture = new CultureInfo("pt-BR");
                 });

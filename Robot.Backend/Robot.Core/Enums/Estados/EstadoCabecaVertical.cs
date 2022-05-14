@@ -1,9 +1,9 @@
-﻿namespace Robot.Core.Enums
+﻿namespace Robot.Core.Enums.Estados
 {
     public enum EstadoCabecaVertical
     {
-        Repouso = 0,
-        Baixo = 1,
-        Cima = 2
+        Baixo = -1,
+        EmRepouso = 0,
+        Cima = 1
     }
 }

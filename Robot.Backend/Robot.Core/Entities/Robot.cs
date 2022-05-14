@@ -1,4 +1,6 @@
-﻿using Robot.Core.Enums;
+﻿using Robot.Core.Entities.PartesRobo;
+using Robot.Core.Enums;
+using Robot.Core.Enums.Estados;
 
 namespace Robot.Core.Entities
 {
@@ -10,43 +12,20 @@ namespace Robot.Core.Entities
 
         public Robot()
         {
-            Cabeca = new Cabeca(EstadoCabecaVertical.Repouso, 0);
-            BracoEsquerdo = new Braco(new Cotovelo { Estado = EstadoCotovelo.EmRepouso }, new Pulso { });
-            BracoDireito = new Braco(new Cotovelo { Estado = EstadoCotovelo.EmRepouso }, new Pulso { });
+            Cabeca = new Cabeca(EstadoCabecaVertical.EmRepouso, EstadoCabecaHorizontal.EmRepouso);
+            BracoEsquerdo = new Braco(new Cotovelo(EstadoCotovelo.EmRepouso), new Pulso(EstadoPulso.EmRepouso));
+            BracoDireito = new Braco(new Cotovelo(EstadoCotovelo.EmRepouso), new Pulso(EstadoPulso.EmRepouso));
         }
-    }
 
-    public class Cabeca
-    {
-        public EstadoCabecaVertical EixoVertical { get; set; }
-        public int EixoHorizontal { get; set; }
-
-        public Cabeca(EstadoCabecaVertical eixoVertical, int eixoHorizontal)
+        public Cabeca GetCabeca() => Cabeca;
+        public Braco GetBraco(DirecaoBraco direcaoBraco)
         {
-            EixoVertical = eixoVertical;
-            EixoHorizontal = eixoHorizontal;
+            return direcaoBraco switch
+            {
+                DirecaoBraco.Esquerda => BracoEsquerdo,
+                DirecaoBraco.Direita => BracoDireito,
+                _ => new Braco(new Cotovelo(EstadoCotovelo.EmRepouso), new Pulso(EstadoPulso.EmRepouso))
+            };
         }
-    }
-
-    public class Braco
-    {
-        public Cotovelo Cotovelo { get; set; }
-        public Pulso Pulso { get; set; }
-
-        public Braco(Cotovelo cotovelo, Pulso pulso)
-        {
-            Cotovelo = cotovelo;
-            Pulso = pulso;
-        }
-    }
-
-    public class Cotovelo
-    {
-        public EstadoCotovelo Estado { get; set; }
-    }
-
-    public class Pulso
-    {
-        public EstadoPulso Estado { get; set; }
     }
 }

@@ -3,6 +3,6 @@
     public enum MembroBraco
     {
         Cotovelo = 1,
-        Punho = 2
+        Pulso = 2
     }
 }
