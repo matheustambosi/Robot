@@ -2,7 +2,9 @@
 using Robot.Core.Exceptions;
 using Robot.Core.FluentValidation.Validations;
 using Robot.Core.Messaging.Controllers.Request;
+using Robot.Core.Messaging.Controllers.Response;
 using Robot.Core.Messaging.Request;
+using Robot.Core.Messaging.Services;
 using Robot.Core.Services;
 using System;
 
@@ -10,33 +12,29 @@ namespace Robot.Api.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class MovimentarController : ControllerBase
+    public class RoboController : ControllerBase
     {
         private readonly RobotService _robotService;
 
-        public MovimentarController(RobotService robotService, MovimentarCabecaValidation movimentarCabecaValidation)
+        public RoboController(RobotService robotService, MovimentarCabecaValidation movimentarCabecaValidation)
         {
             _robotService = robotService;
         }
 
         [HttpGet]
-        public Core.Entities.Robot GetRobot()
+        public GetRobotResponse GetRobot()
         {
             return _robotService.GetRobot();
         }
 
-        [HttpPost("Cabeca")]
+        [HttpPost("Movimentar/Cabeca")]
         public IActionResult MovimentarCabeca(MovimentarCabecaRequest request)
         {
             try
             {
-                _robotService.MovimentarCabeca(new Core.Messaging.Services.MovimentarCabecaServiceRequest
-                {
-                    Direcao = request.Direcao,
-                    ProximoEstado = request.ProximoEstado
-                });
+                _robotService.MovimentarCabeca(new MovimentarCabecaServiceRequest(request));
 
-                return Ok();
+                return NoContent();
             }
             catch (RobotException robotEx)
             {
@@ -48,13 +46,14 @@ namespace Robot.Api.Controllers
             }
         }
 
-        [HttpPost("Braco")]
-        public IActionResult MovimentarBraco(MovimentarBracoRequest request)
+        [HttpPost("Movimentar/Braco")]
+        public IActionResult MovimentarBraco([FromBody] MovimentarBracoRequest request)
         {
             try
             {
-                _robotService.MovimentarBraco();
-                return Ok();
+                _robotService.MovimentarBraco(new MovimentarBracoServiceRequest(request));
+
+                return NoContent();
             }
             catch (RobotException robotEx)
             {

@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Robot.Core.Entities.PartesRobo;
 
 namespace Robot.Core.Messaging.Controllers.Response
 {
     public class GetRobotResponse
     {
+        public Cabeca Cabeca { get; set; }
+        public Braco BracoEsquerdo { get; set; }
+        public Braco BracoDireito { get; set; }
     }
 }
